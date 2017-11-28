@@ -1,7 +1,7 @@
 var JELE0006 = {
     init: function () {
         console.log("script in JELE0006 called");
-        var box = document.createElement('div'),
+        var div = document.createElement('box'),
             boxes = document.getElementById('boxes');
 
 
