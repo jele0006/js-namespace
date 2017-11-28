@@ -1,17 +1,20 @@
 var JELE0006 = {
     init: function () {
         console.log("script in JELE0006 called");
-        var div = document.createElement('box'),
-            boxes = document.getElementById('boxes');
+        var div = document.createElement('div');
 
+        div.textContent = "JELE0006";
+        div.classList.add('box');
+        document.getElementById("boxes").appendChild(div);
 
-        box.textContent = "JELE0006";
-        box.classList.add('box');
-        boxes.appendChild(box);
-
-        box.addEventListener('mouseover', mouseOver);
-        box.addEventListener('mouseout', mouseOut);
-        box.addEventListener('click', mouseClick);
+        div.addEventListener('mouseover', mouseOver);
+        div.addEventListener('mouseout', mouseOut);
+        div.addEventListener('click', mouseClick);
+        
+        function mouseClick(event) {
+            event.currentTarget.style.borderColor = 'Crimson';
+            event.currentTarget.style.backgroundColor = 'Red';
+        }
 
         function mouseOver(event) {
             event.currentTarget.classList.toggle('highlight');
@@ -19,11 +22,6 @@ var JELE0006 = {
 
         function mouseOut(event) {
             event.currentTarget.classList.toggle('highlight');
-        }
-
-        function mouseClick(event) {
-            event.currentTarget.style.borderColor = "Crimson";
-            event.currentTarget.style.backgroundColor = "Red";
         }
 
     }
