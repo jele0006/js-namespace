@@ -1,20 +1,31 @@
 var JELE0006 = {
-    prop1: 123,
-    init: function(){
-        //find your div
-        //add your event listeners obj.addEvenListener("click", JELE0006.jjj);
-        JELE0006.jjj();
-    },
-    prop2: 456,
-    jjj: function(){
-        
+    init: function () {
+        console.log("script in JELE0006 called");
+        var box = document.createElement('div'),
+            boxes = document.getElementById('boxes');
+
+
+        box.textContent = "JELE0006";
+        box.classList.add('box');
+        boxes.appendChild(box);
+
+        box.addEventListener('mouseover', mouseOver);
+        box.addEventListener('mouseout', mouseOut);
+        box.addEventListener('click', mouseClick);
+
+        function mouseOver(event) {
+            event.currentTarget.classList.toggle('highlight');
+        }
+
+        function mouseOut(event) {
+            event.currentTarget.classList.toggle('highlight');
+        }
+
+        function mouseClick(event) {
+            event.currentTarget.style.borderColor = "Crimson";
+            event.currentTarget.style.backgroundColor = "Red";
+        }
+
     }
-}
 
-
-//https://prof3ssorst3v3.github.io/js-namespace/index.html
-//professorSt3v3.github.io/js-namespace/index.html?username=jele0006     (to load your script only)
-//https://prof3ssorst3v3.github.io/js-namespace/index.html?user=jele0006
-
-
-//not sure which one works just yet
+}; 
